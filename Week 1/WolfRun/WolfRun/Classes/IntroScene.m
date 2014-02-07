@@ -36,7 +36,7 @@
     if (!self) return(nil);
     
     //Start Background Music
-    [[OALSimpleAudio sharedInstance] playBg:@"background_music.mp3" loop:YES];
+   // [[OALSimpleAudio sharedInstance] playBg:@"background_music.mp3" loop:YES];
     
     // Set Background Image
     CCSprite *background = [CCSprite spriteWithImageNamed:@"desert_BG.png"];

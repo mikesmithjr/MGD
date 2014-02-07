@@ -132,47 +132,40 @@
 // -----------------------------------------------------------------------
 
 -(void) touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
-    CGPoint touchLoc = [touch locationInNode:self];
-    
-    // Log touch location
-    CCLOG(@"Move sprite to @ %@",NSStringFromCGPoint(touchLoc));
-    
-    CCLOG(@"Boy's Location is %@", NSStringFromCGPoint(_boySprite.position));
-    CCLOG(@"Girls's Location is %@", NSStringFromCGPoint(_girlSprite.position));
-    CCLOG(@"Wolf's Location is %@", NSStringFromCGPoint(_wolfSprite.position));
-    
-    if (CGPointEqualToPoint(touchLoc, _boySprite.position)) {
+ 
+    CGPoint location = [touch locationInNode:self];
+    CGRect _boySpriteRect = [_boySprite boundingBox];
+    CGRect _girlSpriteRect = [_girlSprite boundingBox];
+    CGRect _wolfSpriteRect = [_wolfSprite boundingBox];
+    if(CGRectContainsPoint(_boySpriteRect, location)) {
         
-        [[OALSimpleAudio sharedInstance] playEffect:@"ping_pong_8bit_beeep.ogg"];
+        // particularSprite touched
+        [[OALSimpleAudio sharedInstance] playEffect:@"jump_10.wav"];
         
-    } else if (CGPointEqualToPoint(touchLoc, _girlSprite.position)){
+    }else if (CGRectContainsPoint(_girlSpriteRect, location)){
         
-        [[OALSimpleAudio sharedInstance] playEffect:@"ping_pong_8bit_peeeeeep.ogg"];
+        [[OALSimpleAudio sharedInstance] playEffect:@"jump_11.wav"];
         
-    } else if (CGPointEqualToPoint(touchLoc, _wolfSprite.position)){
+    }else if (CGRectContainsPoint(_wolfSpriteRect, location)){
         
         [[OALSimpleAudio sharedInstance] playEffect:@"saberhowl.wav"];
+        
     }
     
     
 }
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+-(void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch * touch = [touches anyObject];
-    CGPoint positionInScene = [touch locationInNode:self];
     
-    if (CGPointEqualToPoint(positionInScene, _boySprite.position)) {
-        
-        [[OALSimpleAudio sharedInstance] playEffect:@"ping_pong_8bit_beeep.ogg"];
-        
-    } else if (CGPointEqualToPoint(positionInScene, _girlSprite.position)){
-        
-        [[OALSimpleAudio sharedInstance] playEffect:@"ping_pong_8bit_peeeeeep.ogg"];
-        
-    } else if (CGPointEqualToPoint(positionInScene, _wolfSprite.position)){
-        
-        [[OALSimpleAudio sharedInstance] playEffect:@"saberhowl.wav"];
-    }
+    CGPoint location = [touch locationInNode:self];
+    CGRect _boySpriteRect = CGRectMake(_boySprite.position.x, _boySprite.position.y, _boySprite.contentSize.width, _boySprite.contentSize.height);
+            if(CGRectContainsPoint(_boySpriteRect, location)) {
+                // particularSprite touched
+                [[OALSimpleAudio sharedInstance] playEffect:@"ping_pong_8bit_beeep.ogg"];
+            }
+    
+    
     
 }
 

@@ -228,6 +228,8 @@
 		92B84C1618A480CC008559AA /* Girl.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B84C1418A480CC008559AA /* Girl.png */; };
 		92B84C1818A4863A008559AA /* Wolf.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B84C1718A4863A008559AA /* Wolf.png */; };
 		92B84C1A18A486FB008559AA /* background_music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 92B84C1918A486FB008559AA /* background_music.mp3 */; };
+		92B84F0118A4A8FA008559AA /* jump_10.wav in Resources */ = {isa = PBXBuildFile; fileRef = 92B84EFF18A4A8FA008559AA /* jump_10.wav */; };
+		92B84F0218A4A8FA008559AA /* jump_11.wav in Resources */ = {isa = PBXBuildFile; fileRef = 92B84F0018A4A8FA008559AA /* jump_11.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -685,8 +687,8 @@
 		92B84C1418A480CC008559AA /* Girl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Girl.png; sourceTree = "<group>"; };
 		92B84C1718A4863A008559AA /* Wolf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Wolf.png; sourceTree = "<group>"; };
 		92B84C1918A486FB008559AA /* background_music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = background_music.mp3; sourceTree = "<group>"; };
-		92B84C1B18A4985B008559AA /* ping_pong_8bit_peeeeeep.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = ping_pong_8bit_peeeeeep.ogg; sourceTree = "<group>"; };
-		92B84C1C18A4987A008559AA /* ping_pong_8bit_beeep.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = ping_pong_8bit_beeep.ogg; sourceTree = "<group>"; };
+		92B84EFF18A4A8FA008559AA /* jump_10.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jump_10.wav; sourceTree = "<group>"; };
+		92B84F0018A4A8FA008559AA /* jump_11.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jump_11.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -761,14 +763,14 @@
 				92B84C1318A480CC008559AA /* Boy.png */,
 				92B84C1418A480CC008559AA /* Girl.png */,
 				92B84C1118A47EA3008559AA /* saberhowl.wav */,
-				92B84C1B18A4985B008559AA /* ping_pong_8bit_peeeeeep.ogg */,
 				92B84C0D18A47E47008559AA /* swamp.png */,
 				92B84C0B18A47E2E008559AA /* desert_BG.png */,
 				92B84C1718A4863A008559AA /* Wolf.png */,
 				92B84C1918A486FB008559AA /* background_music.mp3 */,
 				92B84C0918A47E28008559AA /* button.png */,
+				92B84EFF18A4A8FA008559AA /* jump_10.wav */,
+				92B84F0018A4A8FA008559AA /* jump_11.wav */,
 				92B8494D18A47C90008559AA /* Default.png */,
-				92B84C1C18A4987A008559AA /* ping_pong_8bit_beeep.ogg */,
 				92B8494F18A47C90008559AA /* Default@2x.png */,
 				92B8495118A47C90008559AA /* Default-568h@2x.png */,
 				92B8495318A47C90008559AA /* Default-Landscape~ipad.png */,
@@ -1687,6 +1689,7 @@
 				92B8495418A47C90008559AA /* Default-Landscape~ipad.png in Resources */,
 				92B8496918A47C90008559AA /* Icon-Small.png in Resources */,
 				92B8496718A47C90008559AA /* Icon-Small-50.png in Resources */,
+				92B84F0118A4A8FA008559AA /* jump_10.wav in Resources */,
 				92B84C1518A480CC008559AA /* Boy.png in Resources */,
 				92B84BF218A47C93008559AA /* fire.plist in Resources */,
 				92B84BF418A47C93008559AA /* fire.png in Resources */,
@@ -1709,6 +1712,7 @@
 				92B8496F18A47C90008559AA /* Icon-Spotlight-iOS7@2x.png in Resources */,
 				92B8495F18A47C90008559AA /* Icon-76.png in Resources */,
 				92B84B3518A47C92008559AA /* ChangeLog in Resources */,
+				92B84F0218A4A8FA008559AA /* jump_11.wav in Resources */,
 				92B8497418A47C90008559AA /* iTunesArtwork@2x in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2055,6 +2059,7 @@
 				92B84C0518A47C93008559AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		92B84C0618A47C93008559AA /* Build configuration list for PBXNativeTarget "WolfRun" */ = {
 			isa = XCConfigurationList;
@@ -2063,6 +2068,7 @@
 				92B84C0818A47C93008559AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
