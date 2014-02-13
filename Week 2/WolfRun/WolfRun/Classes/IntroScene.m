@@ -35,6 +35,10 @@
     self = [super init];
     if (!self) return(nil);
     
+    //Preload Background music
+    
+    [[OALSimpleAudio sharedInstance]preloadBg:@"background_music.mp3"];
+    
     //Start Background Music
     [[OALSimpleAudio sharedInstance] playBg:@"background_music.mp3" loop:YES];
     
