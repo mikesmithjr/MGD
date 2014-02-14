@@ -164,32 +164,16 @@
         
         [[OALSimpleAudio sharedInstance] playEffect:@"jump_10.wav"];
         CCActionFlipX *boyFlip = [CCActionFlipX actionWithFlipX:TRUE];
-        CCActionMoveTo *boyMove = [CCActionMoveTo actionWithDuration:2.0f position:ccp(self.contentSize.width/8, self.contentSize.height/3)];
+        CCActionMoveTo *boyMove = [CCActionMoveTo actionWithDuration:2.0f position:_wolfSprite.position];
         [_boySprite runAction:[CCActionSequence actionWithArray:@[boyFlip,boyMove]]];
-        CCActionFlipX *girlFlip = [CCActionFlipX actionWithFlipX:TRUE];
-        [_girlSprite runAction:girlFlip];
-        CCActionFlipX *wolfFlip = [CCActionFlipX actionWithFlipX:TRUE];
-        CCActionMoveTo *wolfMove = [CCActionMoveTo actionWithDuration:2.0f position:ccp(-150, self.contentSize.height/2)];
-        [_wolfSprite runAction:[CCActionSequence actionWithArray:@[wolfFlip, wolfMove]]];
-        
-        
-        [[OALSimpleAudio sharedInstance] playEffect:@"saberhowl.wav"];
         
     }else if (CGRectContainsPoint(_girlSpriteRect, location)){
         
         [[OALSimpleAudio sharedInstance] playEffect:@"jump_11.wav"];
-        CCActionFlipX *girlFlip = [CCActionFlipX actionWithFlipX:TRUE];
         CCActionJumpBy *girlJump_Up = [CCActionJumpBy actionWithDuration:1.0f position:ccp(0, 200) height:50 jumps:1];
-        CCActionJumpBy *girlJump_Down = [CCActionJumpBy actionWithDuration:0.2f position:ccp(0, -200) height:50 jumps:1];
-        [_girlSprite runAction:[CCActionSequence actionWithArray:@[girlFlip,girlJump_Up,girlJump_Down]]];
-        CCActionFlipX *wolfFlip = [CCActionFlipX actionWithFlipX:TRUE];
-        CCActionMoveTo *wolfMove = [CCActionMoveTo actionWithDuration:2.0f position:ccp(-150, self.contentSize.height/2)];
-        [_wolfSprite runAction:[CCActionSequence actionWithArray:@[wolfFlip, wolfMove]]];
-        
-        
+        CCActionJumpBy *girlJump_Down = [CCActionJumpBy actionWithDuration:0.7f position:ccp(0, -200) height:50 jumps:1];
+        [_girlSprite runAction:girlJump_Up];
         [[OALSimpleAudio sharedInstance] playEffect:@"saberhowl.wav"];
-        
-        
         
     }else if (CGRectContainsPoint(_wolfSpriteRect, location)){
         
@@ -197,17 +181,11 @@
         [_physicsWorld addChild:_rockSprite];
         CCActionRotateBy *rockSpin = [CCActionRotateBy actionWithDuration:1.5f angle:360];
         [_rockSprite runAction:[CCActionRepeatForever actionWithAction:rockSpin]];
-        CCActionMoveTo *rockMove = [CCActionMoveTo actionWithDuration:1.5f position:_girlSprite.position];
+        CCActionMoveTo *rockMove = [CCActionMoveTo actionWithDuration:1.5f position:_boySprite.position];
         CCActionRemove *rockRemove = [CCActionRemove action];
         [_rockSprite runAction:[CCActionSequence actionWithArray:@[rockMove,rockRemove]]];
         
-        [[OALSimpleAudio sharedInstance] playEffect:@"jump_10.wav"];
-        CCActionFlipX *boyFlip = [CCActionFlipX actionWithFlipX:TRUE];
-        CCActionMoveTo *boyMove = [CCActionMoveTo actionWithDuration:2.0f position:ccp(self.contentSize.width/8, self.contentSize.height/3)];
-        [_boySprite runAction:[CCActionSequence actionWithArray:@[boyFlip,boyMove]]];
-        CCActionFlipX *wolfFlip = [CCActionFlipX actionWithFlipX:TRUE];
-        CCActionMoveTo *wolfMove = [CCActionMoveTo actionWithDuration:2.0f position:ccp(-150, self.contentSize.height/2)];
-        [_wolfSprite runAction:[CCActionSequence actionWithArray:@[wolfFlip, wolfMove]]];
+        
         
     }
     
@@ -230,8 +208,6 @@
     [[OALSimpleAudio sharedInstance] stopBg];
         return YES;
 }
-
-
 
 
 // -----------------------------------------------------------------------
