@@ -9,6 +9,7 @@
 
 #import "GameScene.h"
 #import "IntroScene.h"
+#import "CCAnimation.h"
 
 
 // -----------------------------------------------------------------------
@@ -24,6 +25,22 @@
     CCPhysicsNode *_physicsWorld;
     CCButton *backButton;
     CCButton *startButton;
+    
+    CCSprite *_wolfWalkSprite;
+    CCSprite *_wolfHitSprite;
+    CCSprite *_wolfDieSprite;
+    
+    CCAction *_WolfWalk;
+    CCAction *_WolfHit;
+    CCAction *_WolfDie;
+    
+    BOOL WolfWalk;
+    BOOL WolfHit;
+    BOOL WolfDie;
+    
+    NSMutableArray *wolfWalkFrames;
+    NSMutableArray *wolfHitFrames;
+    NSMutableArray *wolfDieFrames;
     
     NSMutableArray * sprites;
 }
@@ -113,6 +130,46 @@
     backButton.position = ccp(0.85f, 0.95f); // Top Right of screen
     [backButton setTarget:self selector:@selector(onBackClicked:)];
     [self addChild:backButton];
+    
+    // Adding Animated Wolf Sprites
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"WolfWalk-hd.plist"];
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"WolfHit-hd.plist"];
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"WolfDie-hd.plist"];
+    
+    CCSpriteBatchNode *wolfWalkSpriteSheet = [CCSpriteBatchNode batchNodeWithFile:@"WolfWalk-hd.png"];
+    CCSpriteBatchNode *wolfHitSpriteSheet = [CCSpriteBatchNode batchNodeWithFile:@"WolfHit-hd.png"];
+    CCSpriteBatchNode *wolfDieSpriteSheet = [CCSpriteBatchNode batchNodeWithFile:@"WolfDie-hd.png"];
+    [self addChild:wolfWalkSpriteSheet];
+    [self addChild:wolfHitSpriteSheet];
+    [self addChild:wolfDieSpriteSheet];
+    
+    //CCSpriteFrame *walk = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"darksaber_walk001.png"];
+   // _wolfWalkSprite = [CCSprite spriteWithSpriteFrame:walk];
+   // [self addChild:_wolfWalkSprite];
+   // CCSpriteFrame *hit = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"darksaber_hit001.png"];
+   // _wolfHitSprite = [CCSprite spriteWithSpriteFrame:hit];
+   // [self addChild:_wolfHitSprite];
+    CCSpriteFrame *die = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"darksaber_death001.png"];
+    _wolfDieSprite = [CCSprite spriteWithSpriteFrame:die];
+    _wolfDieSprite.position  = ccp(self.contentSize.width/8,self.contentSize.height/3);
+    
+    
+    wolfWalkFrames = [NSMutableArray array];
+    for (int i=1; i<=39; i++) {
+        [wolfWalkFrames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"darksaber_walk00%d.png", i]]];
+    }
+    wolfHitFrames = [NSMutableArray array];
+    for (int i=1; i<=26; i++) {
+        [wolfHitFrames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"darksaber_hit00%d.png", i]]];
+    }
+    wolfDieFrames = [NSMutableArray array];
+    for (int i=1; i<=101; i++) {
+        [wolfDieFrames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"darksaber_death00%d.png", i]]];
+    }
+    
+    
+    
+    
 
     // done
 	return self;
@@ -168,10 +225,14 @@
         [_boySprite runAction:[CCActionSequence actionWithArray:@[boyFlip,boyMove]]];
         CCActionFlipX *girlFlip = [CCActionFlipX actionWithFlipX:TRUE];
         [_girlSprite runAction:girlFlip];
-        CCActionFlipX *wolfFlip = [CCActionFlipX actionWithFlipX:TRUE];
-        CCActionMoveTo *wolfMove = [CCActionMoveTo actionWithDuration:2.0f position:ccp(-150, self.contentSize.height/2)];
-        [_wolfSprite runAction:[CCActionSequence actionWithArray:@[wolfFlip, wolfMove]]];
-        
+        //CCActionFlipX *wolfFlip = [CCActionFlipX actionWithFlipX:TRUE];
+        //CCActionMoveTo *wolfMove = [CCActionMoveTo actionWithDuration:2.0f position:ccp(-150, self.contentSize.height/2)];
+        //[_wolfSprite runAction:[CCActionSequence actionWithArray:@[wolfFlip, wolfMove]]];
+        [_wolfSprite removeFromParent];
+        [self addChild:_wolfDieSprite];
+        CCAnimation *wolfDieAnim = [CCAnimation animationWithSpriteFrames: wolfDieFrames delay:0.05f];
+        CCActionAnimate *DieAction = [CCActionAnimate actionWithAnimation:wolfDieAnim];
+        [_wolfDieSprite runAction:DieAction];
         
         [[OALSimpleAudio sharedInstance] playEffect:@"saberhowl.wav"];
         
@@ -243,6 +304,11 @@
     [_physicsWorld addChild:_girlSprite];
     [_physicsWorld addChild:_boySprite];
     [_physicsWorld addChild:_wolfSprite];
+    
+    //CCAnimation *wolfWalkAnim = [CCAnimation animationWithSpriteFrames: wolfWalkFrames delay:0.2f];
+    //CCActionAnimate *WalkAction = [CCActionAnimate actionWithAnimation:wolfWalkAnim];
+    //CCActionRepeatForever *repeatWalk = [CCActionRepeatForever actionWithAction:WalkAction];
+    //[self runAction:repeatWalk];
     
     [startButton removeFromParent];
 }

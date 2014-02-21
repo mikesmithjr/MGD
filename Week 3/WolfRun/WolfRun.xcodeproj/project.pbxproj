@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9220555D18AC9BF600AD2628 /* rocks.png in Resources */ = {isa = PBXBuildFile; fileRef = 9220555C18AC9BF600AD2628 /* rocks.png */; };
 		9220555F18AC9E9B00AD2628 /* Rocks_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9220555E18AC9E9B00AD2628 /* Rocks_1.png */; };
 		92B8493418A47C90008559AA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B8493318A47C90008559AA /* QuartzCore.framework */; };
 		92B8493618A47C90008559AA /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B8493518A47C90008559AA /* OpenGLES.framework */; };
@@ -216,7 +215,6 @@
 		92B84BE318A47C93008559AA /* IntroScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B84BE218A47C93008559AA /* IntroScene.m */; };
 		92B84C0A18A47E28008559AA /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B84C0918A47E28008559AA /* button.png */; };
 		92B84C0C18A47E2E008559AA /* desert_BG.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B84C0B18A47E2E008559AA /* desert_BG.png */; };
-		92B84C0E18A47E47008559AA /* swamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B84C0D18A47E47008559AA /* swamp.png */; };
 		92B84C1218A47EA3008559AA /* saberhowl.wav in Resources */ = {isa = PBXBuildFile; fileRef = 92B84C1118A47EA3008559AA /* saberhowl.wav */; };
 		92B84C1518A480CC008559AA /* Boy.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B84C1318A480CC008559AA /* Boy.png */; };
 		92B84C1618A480CC008559AA /* Girl.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B84C1418A480CC008559AA /* Girl.png */; };
@@ -224,6 +222,25 @@
 		92B84C1A18A486FB008559AA /* background_music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 92B84C1918A486FB008559AA /* background_music.mp3 */; };
 		92B84F0118A4A8FA008559AA /* jump_10.wav in Resources */ = {isa = PBXBuildFile; fileRef = 92B84EFF18A4A8FA008559AA /* jump_10.wav */; };
 		92B84F0218A4A8FA008559AA /* jump_11.wav in Resources */ = {isa = PBXBuildFile; fileRef = 92B84F0018A4A8FA008559AA /* jump_11.wav */; };
+		92B8A98018B5D23900179A0A /* float_sign.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B8A97F18B5D23900179A0A /* float_sign.png */; };
+		92BCF03518B6F5CA008B5093 /* WolfDie-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92BCF02318B6F5CA008B5093 /* WolfDie-hd.plist */; };
+		92BCF03618B6F5CA008B5093 /* WolfDie-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 92BCF02418B6F5CA008B5093 /* WolfDie-hd.png */; };
+		92BCF03718B6F5CA008B5093 /* WolfDie-ipadhd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92BCF02518B6F5CA008B5093 /* WolfDie-ipadhd.plist */; };
+		92BCF03818B6F5CA008B5093 /* WolfDie-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 92BCF02618B6F5CA008B5093 /* WolfDie-ipadhd.png */; };
+		92BCF03918B6F5CA008B5093 /* WolfDie.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92BCF02718B6F5CA008B5093 /* WolfDie.plist */; };
+		92BCF03A18B6F5CA008B5093 /* WolfDie.png in Resources */ = {isa = PBXBuildFile; fileRef = 92BCF02818B6F5CA008B5093 /* WolfDie.png */; };
+		92BCF03B18B6F5CA008B5093 /* WolfHit-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92BCF02918B6F5CA008B5093 /* WolfHit-hd.plist */; };
+		92BCF03C18B6F5CA008B5093 /* WolfHit-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 92BCF02A18B6F5CA008B5093 /* WolfHit-hd.png */; };
+		92BCF03D18B6F5CA008B5093 /* WolfHit-ipadhd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92BCF02B18B6F5CA008B5093 /* WolfHit-ipadhd.plist */; };
+		92BCF03E18B6F5CA008B5093 /* WolfHit-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 92BCF02C18B6F5CA008B5093 /* WolfHit-ipadhd.png */; };
+		92BCF03F18B6F5CA008B5093 /* WolfHit.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92BCF02D18B6F5CA008B5093 /* WolfHit.plist */; };
+		92BCF04018B6F5CA008B5093 /* WolfHit.png in Resources */ = {isa = PBXBuildFile; fileRef = 92BCF02E18B6F5CA008B5093 /* WolfHit.png */; };
+		92BCF04118B6F5CA008B5093 /* WolfWalk-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92BCF02F18B6F5CA008B5093 /* WolfWalk-hd.plist */; };
+		92BCF04218B6F5CA008B5093 /* WolfWalk-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 92BCF03018B6F5CA008B5093 /* WolfWalk-hd.png */; };
+		92BCF04318B6F5CA008B5093 /* WolfWalk-ipadhd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92BCF03118B6F5CA008B5093 /* WolfWalk-ipadhd.plist */; };
+		92BCF04418B6F5CA008B5093 /* WolfWalk-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 92BCF03218B6F5CA008B5093 /* WolfWalk-ipadhd.png */; };
+		92BCF04518B6F5CA008B5093 /* WolfWalk.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92BCF03318B6F5CA008B5093 /* WolfWalk.plist */; };
+		92BCF04618B6F5CA008B5093 /* WolfWalk.png in Resources */ = {isa = PBXBuildFile; fileRef = 92BCF03418B6F5CA008B5093 /* WolfWalk.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -237,7 +254,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9220555C18AC9BF600AD2628 /* rocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rocks.png; sourceTree = "<group>"; };
 		9220555E18AC9E9B00AD2628 /* Rocks_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rocks_1.png; sourceTree = "<group>"; };
 		92B8493018A47C90008559AA /* WolfRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WolfRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92B8493318A47C90008559AA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -669,7 +685,6 @@
 		92B84BE218A47C93008559AA /* IntroScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = IntroScene.m; path = Classes/IntroScene.m; sourceTree = "<group>"; };
 		92B84C0918A47E28008559AA /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
 		92B84C0B18A47E2E008559AA /* desert_BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = desert_BG.png; sourceTree = "<group>"; };
-		92B84C0D18A47E47008559AA /* swamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swamp.png; sourceTree = "<group>"; };
 		92B84C1118A47EA3008559AA /* saberhowl.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = saberhowl.wav; sourceTree = "<group>"; };
 		92B84C1318A480CC008559AA /* Boy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Boy.png; sourceTree = "<group>"; };
 		92B84C1418A480CC008559AA /* Girl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Girl.png; sourceTree = "<group>"; };
@@ -677,6 +692,25 @@
 		92B84C1918A486FB008559AA /* background_music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = background_music.mp3; sourceTree = "<group>"; };
 		92B84EFF18A4A8FA008559AA /* jump_10.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jump_10.wav; sourceTree = "<group>"; };
 		92B84F0018A4A8FA008559AA /* jump_11.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jump_11.wav; sourceTree = "<group>"; };
+		92B8A97F18B5D23900179A0A /* float_sign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = float_sign.png; sourceTree = "<group>"; };
+		92BCF02318B6F5CA008B5093 /* WolfDie-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "WolfDie-hd.plist"; path = "Resources/WolfDie-hd.plist"; sourceTree = "<group>"; };
+		92BCF02418B6F5CA008B5093 /* WolfDie-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "WolfDie-hd.png"; path = "Resources/WolfDie-hd.png"; sourceTree = "<group>"; };
+		92BCF02518B6F5CA008B5093 /* WolfDie-ipadhd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "WolfDie-ipadhd.plist"; path = "Resources/WolfDie-ipadhd.plist"; sourceTree = "<group>"; };
+		92BCF02618B6F5CA008B5093 /* WolfDie-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "WolfDie-ipadhd.png"; path = "Resources/WolfDie-ipadhd.png"; sourceTree = "<group>"; };
+		92BCF02718B6F5CA008B5093 /* WolfDie.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = WolfDie.plist; path = Resources/WolfDie.plist; sourceTree = "<group>"; };
+		92BCF02818B6F5CA008B5093 /* WolfDie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = WolfDie.png; path = Resources/WolfDie.png; sourceTree = "<group>"; };
+		92BCF02918B6F5CA008B5093 /* WolfHit-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "WolfHit-hd.plist"; path = "Resources/WolfHit-hd.plist"; sourceTree = "<group>"; };
+		92BCF02A18B6F5CA008B5093 /* WolfHit-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "WolfHit-hd.png"; path = "Resources/WolfHit-hd.png"; sourceTree = "<group>"; };
+		92BCF02B18B6F5CA008B5093 /* WolfHit-ipadhd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "WolfHit-ipadhd.plist"; path = "Resources/WolfHit-ipadhd.plist"; sourceTree = "<group>"; };
+		92BCF02C18B6F5CA008B5093 /* WolfHit-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "WolfHit-ipadhd.png"; path = "Resources/WolfHit-ipadhd.png"; sourceTree = "<group>"; };
+		92BCF02D18B6F5CA008B5093 /* WolfHit.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = WolfHit.plist; path = Resources/WolfHit.plist; sourceTree = "<group>"; };
+		92BCF02E18B6F5CA008B5093 /* WolfHit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = WolfHit.png; path = Resources/WolfHit.png; sourceTree = "<group>"; };
+		92BCF02F18B6F5CA008B5093 /* WolfWalk-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "WolfWalk-hd.plist"; path = "Resources/WolfWalk-hd.plist"; sourceTree = "<group>"; };
+		92BCF03018B6F5CA008B5093 /* WolfWalk-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "WolfWalk-hd.png"; path = "Resources/WolfWalk-hd.png"; sourceTree = "<group>"; };
+		92BCF03118B6F5CA008B5093 /* WolfWalk-ipadhd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "WolfWalk-ipadhd.plist"; path = "Resources/WolfWalk-ipadhd.plist"; sourceTree = "<group>"; };
+		92BCF03218B6F5CA008B5093 /* WolfWalk-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "WolfWalk-ipadhd.png"; path = "Resources/WolfWalk-ipadhd.png"; sourceTree = "<group>"; };
+		92BCF03318B6F5CA008B5093 /* WolfWalk.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = WolfWalk.plist; path = Resources/WolfWalk.plist; sourceTree = "<group>"; };
+		92BCF03418B6F5CA008B5093 /* WolfWalk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = WolfWalk.png; path = Resources/WolfWalk.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -703,8 +737,26 @@
 		9220555A18AC8B3000AD2628 /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
+				92BCF02318B6F5CA008B5093 /* WolfDie-hd.plist */,
+				92BCF02418B6F5CA008B5093 /* WolfDie-hd.png */,
+				92BCF02518B6F5CA008B5093 /* WolfDie-ipadhd.plist */,
+				92BCF02618B6F5CA008B5093 /* WolfDie-ipadhd.png */,
+				92BCF02718B6F5CA008B5093 /* WolfDie.plist */,
+				92BCF02818B6F5CA008B5093 /* WolfDie.png */,
+				92BCF02918B6F5CA008B5093 /* WolfHit-hd.plist */,
+				92BCF02A18B6F5CA008B5093 /* WolfHit-hd.png */,
+				92BCF02B18B6F5CA008B5093 /* WolfHit-ipadhd.plist */,
+				92BCF02C18B6F5CA008B5093 /* WolfHit-ipadhd.png */,
+				92BCF02D18B6F5CA008B5093 /* WolfHit.plist */,
+				92BCF02E18B6F5CA008B5093 /* WolfHit.png */,
+				92BCF02F18B6F5CA008B5093 /* WolfWalk-hd.plist */,
+				92BCF03018B6F5CA008B5093 /* WolfWalk-hd.png */,
+				92BCF03118B6F5CA008B5093 /* WolfWalk-ipadhd.plist */,
+				92BCF03218B6F5CA008B5093 /* WolfWalk-ipadhd.png */,
+				92BCF03318B6F5CA008B5093 /* WolfWalk.plist */,
+				92BCF03418B6F5CA008B5093 /* WolfWalk.png */,
+				92B8A97F18B5D23900179A0A /* float_sign.png */,
 				9220555E18AC9E9B00AD2628 /* Rocks_1.png */,
-				9220555C18AC9BF600AD2628 /* rocks.png */,
 				92B84C0918A47E28008559AA /* button.png */,
 				92B84C1718A4863A008559AA /* Wolf.png */,
 				92B84C1418A480CC008559AA /* Girl.png */,
@@ -720,6 +772,7 @@
 				92B84EFF18A4A8FA008559AA /* jump_10.wav */,
 				92B84C1918A486FB008559AA /* background_music.mp3 */,
 				92B84C1118A47EA3008559AA /* saberhowl.wav */,
+				9220555A18AC8B3000AD2628 /* Sprites */,
 			);
 			name = Sounds;
 			sourceTree = "<group>";
@@ -773,8 +826,6 @@
 			isa = PBXGroup;
 			children = (
 				9220555B18AC8B5B00AD2628 /* Sounds */,
-				9220555A18AC8B3000AD2628 /* Sprites */,
-				92B84C0D18A47E47008559AA /* swamp.png */,
 				92B84C0B18A47E2E008559AA /* desert_BG.png */,
 				92B8494D18A47C90008559AA /* Default.png */,
 				92B8494F18A47C90008559AA /* Default@2x.png */,
@@ -1678,34 +1729,51 @@
 				92B8496B18A47C90008559AA /* Icon-Small@2x.png in Resources */,
 				92B8495D18A47C90008559AA /* Icon-72@2x.png in Resources */,
 				92B84C1A18A486FB008559AA /* background_music.mp3 in Resources */,
+				92BCF03618B6F5CA008B5093 /* WolfDie-hd.png in Resources */,
+				92BCF03918B6F5CA008B5093 /* WolfDie.plist in Resources */,
+				92BCF03718B6F5CA008B5093 /* WolfDie-ipadhd.plist in Resources */,
+				92BCF04118B6F5CA008B5093 /* WolfWalk-hd.plist in Resources */,
 				9220555F18AC9E9B00AD2628 /* Rocks_1.png in Resources */,
 				92B8494E18A47C90008559AA /* Default.png in Resources */,
 				92B8495718A47C90008559AA /* Icon.png in Resources */,
 				92B8496518A47C90008559AA /* Icon-iPad-Spotlight-iOS7@2x.png in Resources */,
+				92BCF03A18B6F5CA008B5093 /* WolfDie.png in Resources */,
 				92B8495418A47C90008559AA /* Default-Landscape~ipad.png in Resources */,
 				92B8496918A47C90008559AA /* Icon-Small.png in Resources */,
+				92BCF03F18B6F5CA008B5093 /* WolfHit.plist in Resources */,
 				92B8496718A47C90008559AA /* Icon-Small-50.png in Resources */,
 				92B84F0118A4A8FA008559AA /* jump_10.wav in Resources */,
 				92B84C1518A480CC008559AA /* Boy.png in Resources */,
 				92B84B5018A47C92008559AA /* LICENSE_Kazmath.txt in Resources */,
+				92BCF03D18B6F5CA008B5093 /* WolfHit-ipadhd.plist in Resources */,
 				92B8495B18A47C90008559AA /* Icon-72.png in Resources */,
-				9220555D18AC9BF600AD2628 /* rocks.png in Resources */,
 				92B84AA918A47C91008559AA /* LICENSE_cocos2d.txt in Resources */,
 				92B84C1618A480CC008559AA /* Girl.png in Resources */,
 				92B84C0A18A47E28008559AA /* button.png in Resources */,
 				92B8495218A47C90008559AA /* Default-568h@2x.png in Resources */,
 				92B84C1818A4863A008559AA /* Wolf.png in Resources */,
-				92B84C0E18A47E47008559AA /* swamp.png in Resources */,
 				92B8497218A47C90008559AA /* iTunesArtwork in Resources */,
+				92BCF03818B6F5CA008B5093 /* WolfDie-ipadhd.png in Resources */,
+				92BCF04318B6F5CA008B5093 /* WolfWalk-ipadhd.plist in Resources */,
+				92BCF03B18B6F5CA008B5093 /* WolfHit-hd.plist in Resources */,
 				92B8496D18A47C90008559AA /* Icon-Spotlight-iOS7.png in Resources */,
+				92BCF04418B6F5CA008B5093 /* WolfWalk-ipadhd.png in Resources */,
 				92B84C1218A47EA3008559AA /* saberhowl.wav in Resources */,
+				92BCF03E18B6F5CA008B5093 /* WolfHit-ipadhd.png in Resources */,
 				92B8496118A47C90008559AA /* Icon-76@2x.png in Resources */,
 				92B84BD518A47C93008559AA /* LICENSE_Chipmunk.txt in Resources */,
+				92BCF03518B6F5CA008B5093 /* WolfDie-hd.plist in Resources */,
 				92B8496F18A47C90008559AA /* Icon-Spotlight-iOS7@2x.png in Resources */,
+				92BCF03C18B6F5CA008B5093 /* WolfHit-hd.png in Resources */,
 				92B8495F18A47C90008559AA /* Icon-76.png in Resources */,
+				92BCF04618B6F5CA008B5093 /* WolfWalk.png in Resources */,
 				92B84B3518A47C92008559AA /* ChangeLog in Resources */,
+				92BCF04018B6F5CA008B5093 /* WolfHit.png in Resources */,
+				92BCF04518B6F5CA008B5093 /* WolfWalk.plist in Resources */,
 				92B84F0218A4A8FA008559AA /* jump_11.wav in Resources */,
 				92B8497418A47C90008559AA /* iTunesArtwork@2x in Resources */,
+				92BCF04218B6F5CA008B5093 /* WolfWalk-hd.png in Resources */,
+				92B8A98018B5D23900179A0A /* float_sign.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
