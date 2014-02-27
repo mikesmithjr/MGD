@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9217242A18BF0510006C143E /* MenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9217242918BF0510006C143E /* MenuScene.m */; };
 		9217242D18BF0742006C143E /* CreditsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9217242C18BF0742006C143E /* CreditsScene.m */; };
+		9217243018BF0A1C006C143E /* IntructionsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9217242F18BF0A1C006C143E /* IntructionsScene.m */; };
 		9220555F18AC9E9B00AD2628 /* Rocks_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9220555E18AC9E9B00AD2628 /* Rocks_1.png */; };
 		92B8493418A47C90008559AA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B8493318A47C90008559AA /* QuartzCore.framework */; };
 		92B8493618A47C90008559AA /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B8493518A47C90008559AA /* OpenGLES.framework */; };
@@ -260,6 +261,8 @@
 		9217242918BF0510006C143E /* MenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuScene.m; sourceTree = "<group>"; };
 		9217242B18BF0742006C143E /* CreditsScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditsScene.h; sourceTree = "<group>"; };
 		9217242C18BF0742006C143E /* CreditsScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditsScene.m; sourceTree = "<group>"; };
+		9217242E18BF0A1C006C143E /* IntructionsScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntructionsScene.h; sourceTree = "<group>"; };
+		9217242F18BF0A1C006C143E /* IntructionsScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntructionsScene.m; sourceTree = "<group>"; };
 		9220555E18AC9E9B00AD2628 /* Rocks_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rocks_1.png; sourceTree = "<group>"; };
 		92B8493018A47C90008559AA /* WolfRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WolfRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92B8493318A47C90008559AA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -1653,6 +1656,8 @@
 				92B84BDC18A47C93008559AA /* AppDelegate.m */,
 				92B84BDE18A47C93008559AA /* GameScene.h */,
 				92B84BDF18A47C93008559AA /* GameScene.m */,
+				9217242E18BF0A1C006C143E /* IntructionsScene.h */,
+				9217242F18BF0A1C006C143E /* IntructionsScene.m */,
 				9217242818BF0510006C143E /* MenuScene.h */,
 				9217242918BF0510006C143E /* MenuScene.m */,
 				9217242B18BF0742006C143E /* CreditsScene.h */,
@@ -1927,6 +1932,7 @@
 				92B849BE18A47C90008559AA /* CCLabelAtlas.m in Sources */,
 				92B84A5918A47C91008559AA /* cocos2d.m in Sources */,
 				92B84AE118A47C92008559AA /* ALSource.m in Sources */,
+				9217243018BF0A1C006C143E /* IntructionsScene.m in Sources */,
 				92B849E918A47C91008559AA /* CCParticleSystem.m in Sources */,
 				92B84A0E18A47C91008559AA /* CCScene.m in Sources */,
 				92B84A3C18A47C91008559AA /* CCTexture.m in Sources */,

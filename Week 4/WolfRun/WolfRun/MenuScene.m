@@ -11,6 +11,7 @@
 #import "GameScene.h"
 #import "MenuScene.h"
 #import "CreditsScene.h"
+#import "IntructionsScene.h"
 
 
 // -----------------------------------------------------------------------
@@ -62,10 +63,17 @@
     [playButton setTarget:self selector:@selector(onPlayClicked:)];
     [self addChild:playButton];
     
+    // Game Instructions button
+    CCButton *instructionsButton = [CCButton buttonWithTitle:@"Instructions" fontName:@"Chalkduster" fontSize:18.0f];
+    instructionsButton.positionType = CCPositionTypeNormalized;
+    instructionsButton.position = ccp(0.5f, 0.40f);
+    [instructionsButton setTarget:self selector:@selector(onInstructionsClicked:)];
+    [self addChild:instructionsButton];
+    
     // Game Credits button
     CCButton *creditsButton = [CCButton buttonWithTitle:@"Credits" fontName:@"Chalkduster" fontSize:18.0f];
     creditsButton.positionType = CCPositionTypeNormalized;
-    creditsButton.position = ccp(0.5f, 0.35f);
+    creditsButton.position = ccp(0.5f, 0.30f);
     [creditsButton setTarget:self selector:@selector(onCreditsClicked:)];
     [self addChild:creditsButton];
 	
@@ -81,6 +89,13 @@
 {
     // start spinning scene with transition
     [[CCDirector sharedDirector] replaceScene:[GameScene scene]
+                               withTransition:[CCTransition transitionPushWithDirection:CCTransitionDirectionLeft duration:1.0f]];
+}
+
+- (void)onInstructionsClicked:(id)sender
+{
+    // start spinning scene with transition
+    [[CCDirector sharedDirector] replaceScene:[InstructionsScene scene]
                                withTransition:[CCTransition transitionPushWithDirection:CCTransitionDirectionLeft duration:1.0f]];
 }
 
