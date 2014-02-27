@@ -1,29 +1,31 @@
 //
-//  IntroScene.m
+//  CreditsScene.m
 //  WolfRun
 //
-//  Created by Michael Smith on 2/6/14.
-//  Copyright Michael Smith 2014. All rights reserved.
+//  Created by Michael Smith on 2/26/14.
+//  Copyright 2014 Michael Smith. All rights reserved.
 //
-// -----------------------------------------------------------------------
 
 // Import the interfaces
 #import "IntroScene.h"
 #import "GameScene.h"
 #import "MenuScene.h"
-
+#import "CreditsScene.h"
 
 // -----------------------------------------------------------------------
-#pragma mark - IntroScene
+#pragma mark - CreditsScene
 // -----------------------------------------------------------------------
 
-@implementation IntroScene
+@implementation CreditsScene
+{
+    CCButton *backButton;
+}
 
 // -----------------------------------------------------------------------
 #pragma mark - Create & Destroy
 // -----------------------------------------------------------------------
 
-+ (IntroScene *)scene
++ (CreditsScene *)scene
 {
 	return [[self alloc] init];
 }
@@ -38,10 +40,10 @@
     
     //Preload Background music
     
-    [[OALSimpleAudio sharedInstance]preloadBg:@"background_music.mp3"];
+    //[[OALSimpleAudio sharedInstance]preloadBg:@"background_music.mp3"];
     
     //Start Background Music
-    [[OALSimpleAudio sharedInstance] playBg:@"background_music.mp3" loop:YES];
+    //[[OALSimpleAudio sharedInstance] playBg:@"background_music.mp3" loop:YES];
     
     // Set Background Image
     CCSprite *background = [CCSprite spriteWithImageNamed:@"desert_BG.png"];
@@ -55,13 +57,14 @@
     label.position = ccp(0.5f, 0.5f); // Middle of screen
     [self addChild:label];
     
-    // Game Menu button
-    CCButton *menuButton = [CCButton buttonWithTitle:@"Begin" fontName:@"Chalkduster" fontSize:18.0f];
-    menuButton.positionType = CCPositionTypeNormalized;
-    menuButton.position = ccp(0.5f, 0.35f);
-    [menuButton setTarget:self selector:@selector(onMenuClicked:)];
-    [self addChild:menuButton];
-
+    // Create a back button
+    backButton = [CCButton buttonWithTitle:@"[ Menu ]" fontName:@"Chalkduster" fontSize:18.0f];
+    backButton.positionType = CCPositionTypeNormalized;
+    backButton.color = [CCColor redColor];
+    backButton.position = ccp(0.85f, 0.95f); // Top Right of screen
+    [backButton setTarget:self selector:@selector(onBackClicked:)];
+    [self addChild:backButton];
+    
 	
     // done
 	return self;
@@ -71,13 +74,13 @@
 #pragma mark - Button Callbacks
 // -----------------------------------------------------------------------
 
-- (void)onMenuClicked:(id)sender
-{
-    // start spinning scene with transition
-    [[CCDirector sharedDirector] replaceScene:[MenuScene scene]
-                               withTransition:[CCTransition transitionPushWithDirection:CCTransitionDirectionLeft duration:1.0f]];
-}
 
+- (void)onBackClicked:(id)sender
+{
+    // back to intro scene with transition
+    [[CCDirector sharedDirector] replaceScene:[MenuScene scene]
+                               withTransition:[CCTransition transitionPushWithDirection:CCTransitionDirectionRight duration:1.0f]];
+}
 
 
 // -----------------------------------------------------------------------

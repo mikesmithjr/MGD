@@ -1,29 +1,29 @@
 //
-//  IntroScene.m
+//  MenuScene.m
 //  WolfRun
 //
-//  Created by Michael Smith on 2/6/14.
-//  Copyright Michael Smith 2014. All rights reserved.
+//  Created by Michael Smith on 2/26/14.
+//  Copyright 2014 Michael Smith. All rights reserved.
 //
-// -----------------------------------------------------------------------
 
 // Import the interfaces
 #import "IntroScene.h"
 #import "GameScene.h"
 #import "MenuScene.h"
+#import "CreditsScene.h"
 
 
 // -----------------------------------------------------------------------
-#pragma mark - IntroScene
+#pragma mark - MenuScene
 // -----------------------------------------------------------------------
 
-@implementation IntroScene
+@implementation MenuScene
 
 // -----------------------------------------------------------------------
 #pragma mark - Create & Destroy
 // -----------------------------------------------------------------------
 
-+ (IntroScene *)scene
++ (MenuScene *)scene
 {
 	return [[self alloc] init];
 }
@@ -38,7 +38,7 @@
     
     //Preload Background music
     
-    [[OALSimpleAudio sharedInstance]preloadBg:@"background_music.mp3"];
+    //[[OALSimpleAudio sharedInstance]preloadBg:@"background_music.mp3"];
     
     //Start Background Music
     [[OALSimpleAudio sharedInstance] playBg:@"background_music.mp3" loop:YES];
@@ -52,16 +52,22 @@
     CCLabelTTF *label = [CCLabelTTF labelWithString:@"Wolf Run" fontName:@"Chalkduster" fontSize:36.0f];
     label.positionType = CCPositionTypeNormalized;
     label.color = [CCColor redColor];
-    label.position = ccp(0.5f, 0.5f); // Middle of screen
+    label.position = ccp(0.5f, 0.75f); // Middle of screen
     [self addChild:label];
     
-    // Game Menu button
-    CCButton *menuButton = [CCButton buttonWithTitle:@"Begin" fontName:@"Chalkduster" fontSize:18.0f];
-    menuButton.positionType = CCPositionTypeNormalized;
-    menuButton.position = ccp(0.5f, 0.35f);
-    [menuButton setTarget:self selector:@selector(onMenuClicked:)];
-    [self addChild:menuButton];
-
+    // Game scene button
+    CCButton *playButton = [CCButton buttonWithTitle:@"Play Game" fontName:@"Chalkduster" fontSize:18.0f];
+    playButton.positionType = CCPositionTypeNormalized;
+    playButton.position = ccp(0.5f, 0.5f);
+    [playButton setTarget:self selector:@selector(onPlayClicked:)];
+    [self addChild:playButton];
+    
+    // Game Credits button
+    CCButton *creditsButton = [CCButton buttonWithTitle:@"Credits" fontName:@"Chalkduster" fontSize:18.0f];
+    creditsButton.positionType = CCPositionTypeNormalized;
+    creditsButton.position = ccp(0.5f, 0.35f);
+    [creditsButton setTarget:self selector:@selector(onCreditsClicked:)];
+    [self addChild:creditsButton];
 	
     // done
 	return self;
@@ -71,13 +77,19 @@
 #pragma mark - Button Callbacks
 // -----------------------------------------------------------------------
 
-- (void)onMenuClicked:(id)sender
+- (void)onPlayClicked:(id)sender
 {
     // start spinning scene with transition
-    [[CCDirector sharedDirector] replaceScene:[MenuScene scene]
+    [[CCDirector sharedDirector] replaceScene:[GameScene scene]
                                withTransition:[CCTransition transitionPushWithDirection:CCTransitionDirectionLeft duration:1.0f]];
 }
 
+- (void)onCreditsClicked:(id)sender
+{
+    // start spinning scene with transition
+    [[CCDirector sharedDirector] replaceScene:[CreditsScene scene]
+                               withTransition:[CCTransition transitionPushWithDirection:CCTransitionDirectionLeft duration:1.0f]];
+}
 
 
 // -----------------------------------------------------------------------
