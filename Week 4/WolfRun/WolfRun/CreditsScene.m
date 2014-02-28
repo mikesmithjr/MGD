@@ -51,11 +51,29 @@
     [self addChild:background];
     
     // Title
-    CCLabelTTF *label = [CCLabelTTF labelWithString:@"Wolf Run" fontName:@"Chalkduster" fontSize:36.0f];
-    label.positionType = CCPositionTypeNormalized;
-    label.color = [CCColor redColor];
-    label.position = ccp(0.5f, 0.5f); // Middle of screen
-    [self addChild:label];
+    CCLabelTTF *label1 = [CCLabelTTF labelWithString:@"Wolf Run" fontName:@"Chalkduster" fontSize:36.0f];
+    label1.positionType = CCPositionTypeNormalized;
+    label1.color = [CCColor redColor];
+    label1.position = ccp(0.5f, 0.9f); // Middle of screen
+    [self addChild:label1];
+    
+    CCLabelTTF *label2 = [CCLabelTTF labelWithString:@"Werewolf sprite by MindChamber" fontName:@"Chalkduster" fontSize:18.0f];
+    label2.positionType = CCPositionTypeNormalized;
+    label2.color = [CCColor blackColor];
+    label2.position = ccp(0.5f, 0.75f); // Middle of screen
+    [self addChild:label2];
+    
+    CCLabelTTF *label3 = [CCLabelTTF labelWithString:@"Background and Character parts Dylan Squires" fontName:@"Chalkduster" fontSize:18.0f];
+    label3.positionType = CCPositionTypeNormalized;
+    label3.color = [CCColor blackColor];
+    label3.position = ccp(0.5f, 0.5f); // Middle of screen
+    [self addChild:label3];
+    
+    CCLabelTTF *label4 = [CCLabelTTF labelWithString:@"Music by Azazel42" fontName:@"Chalkduster" fontSize:18.0f];
+    label4.positionType = CCPositionTypeNormalized;
+    label4.color = [CCColor blackColor];
+    label4.position = ccp(0.5f, 0.25f); // Middle of screen
+    [self addChild:label4];
     
     // Create a back button
     backButton = [CCButton buttonWithTitle:@"[ Menu ]" fontName:@"Chalkduster" fontSize:18.0f];
