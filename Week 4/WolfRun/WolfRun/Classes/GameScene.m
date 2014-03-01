@@ -43,6 +43,8 @@
     NSMutableArray *wolfDieFrames;
     
     NSMutableArray * sprites;
+    
+    int hitCount;
 }
 
 // -----------------------------------------------------------------------
@@ -61,6 +63,8 @@
     // Apple recommend assigning self with supers return value
     self = [super init];
     if (!self) return(nil);
+    
+    hitCount = 0;
     
     sprites = [[NSMutableArray alloc]init];
     
@@ -99,13 +103,6 @@
     _boySprite.physicsBody.collisionGroup = @"playerGroup";
     _boySprite.physicsBody.collisionType = @"playerCollision";
     
-    // Add Girl sprite
-    _girlSprite = [CCSprite spriteWithImageNamed:@"Girl.png"];
-    _girlSprite.position  = ccp(self.contentSize.width/1.5,self.contentSize.height/3);
-    [sprites addObject:_girlSprite];
-    _girlSprite.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, _girlSprite.contentSize} cornerRadius:0];
-    _girlSprite.physicsBody.collisionGroup = @"playerGroup";
-    _girlSprite.physicsBody.collisionType = @"playerCollision";
     
     // Add Wolf sprite
     _wolfSprite = [CCSprite spriteWithImageNamed:@"Wolf.png"];
@@ -114,13 +111,15 @@
     _wolfSprite.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, _wolfSprite.contentSize} cornerRadius:0];
     _wolfSprite.physicsBody.collisionGroup = @"monsterGroup";
     _wolfSprite.physicsBody.collisionType = @"monsterCollision";
+    _wolfHitSprite.physicsBody.collisionGroup = @"monsterGroup";
+    _wolfHitSprite.physicsBody.collisionType = @"monsterCollision";
     
     // Add Rock sprite
     _rockSprite = [CCSprite spriteWithImageNamed:@"Rocks_1.png"];
-    _rockSprite.position = ccp(self.contentSize.width/8,self.contentSize.height/2);
+    _rockSprite.position = ccp(self.contentSize.width/1.15,self.contentSize.height/3);
     [sprites addObject:_rockSprite];
     _rockSprite.physicsBody = [CCPhysicsBody bodyWithCircleOfRadius:_rockSprite.contentSize.width/2.0f andCenter:_rockSprite.anchorPointInPoints];
-    _rockSprite.physicsBody.collisionGroup = @"monsterGroup";
+    _rockSprite.physicsBody.collisionGroup = @"playerGroup";
     _rockSprite.physicsBody.collisionType = @"rockCollision";
     
     // Create a back button
@@ -146,9 +145,9 @@
     //CCSpriteFrame *walk = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"darksaber_walk001.png"];
    // _wolfWalkSprite = [CCSprite spriteWithSpriteFrame:walk];
    // [self addChild:_wolfWalkSprite];
-   // CCSpriteFrame *hit = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"darksaber_hit001.png"];
-   // _wolfHitSprite = [CCSprite spriteWithSpriteFrame:hit];
-   // [self addChild:_wolfHitSprite];
+    CCSpriteFrame *hit = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"darksaber_hit001.png"];
+    _wolfHitSprite = [CCSprite spriteWithSpriteFrame:hit];
+    _wolfHitSprite.position  = ccp(self.contentSize.width/8,self.contentSize.height/3);
     CCSpriteFrame *die = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"darksaber_death001.png"];
     _wolfDieSprite = [CCSprite spriteWithSpriteFrame:die];
     _wolfDieSprite.position  = ccp(self.contentSize.width/8,self.contentSize.height/3);
@@ -213,7 +212,6 @@
  
     CGPoint location = [touch locationInNode:self];
     CGRect _boySpriteRect = [_boySprite boundingBox];
-    CGRect _girlSpriteRect = [_girlSprite boundingBox];
     CGRect _wolfSpriteRect = [_wolfSprite boundingBox];
     
     // particularSprite touched
@@ -221,54 +219,22 @@
         
         [[OALSimpleAudio sharedInstance] playEffect:@"jump_10.wav"];
         CCActionFlipX *boyFlip = [CCActionFlipX actionWithFlipX:TRUE];
-        CCActionMoveTo *boyMove = [CCActionMoveTo actionWithDuration:2.0f position:ccp(self.contentSize.width/8, self.contentSize.height/3)];
-        [_boySprite runAction:[CCActionSequence actionWithArray:@[boyFlip,boyMove]]];
-        CCActionFlipX *girlFlip = [CCActionFlipX actionWithFlipX:TRUE];
-        [_girlSprite runAction:girlFlip];
-        //CCActionFlipX *wolfFlip = [CCActionFlipX actionWithFlipX:TRUE];
-        //CCActionMoveTo *wolfMove = [CCActionMoveTo actionWithDuration:2.0f position:ccp(-150, self.contentSize.height/2)];
-        //[_wolfSprite runAction:[CCActionSequence actionWithArray:@[wolfFlip, wolfMove]]];
-        [_wolfSprite removeFromParent];
-        [self addChild:_wolfDieSprite];
-        CCAnimation *wolfDieAnim = [CCAnimation animationWithSpriteFrames: wolfDieFrames delay:0.05f];
-        CCActionAnimate *DieAction = [CCActionAnimate actionWithAnimation:wolfDieAnim];
-        [_wolfDieSprite runAction:DieAction];
         
-        [[OALSimpleAudio sharedInstance] playEffect:@"saberhowl.wav"];
-        
-    }else if (CGRectContainsPoint(_girlSpriteRect, location)){
-        
-        [[OALSimpleAudio sharedInstance] playEffect:@"jump_11.wav"];
-        CCActionFlipX *girlFlip = [CCActionFlipX actionWithFlipX:TRUE];
-        CCActionJumpBy *girlJump_Up = [CCActionJumpBy actionWithDuration:1.0f position:ccp(0, 200) height:50 jumps:1];
-        CCActionJumpBy *girlJump_Down = [CCActionJumpBy actionWithDuration:0.2f position:ccp(0, -200) height:50 jumps:1];
-        [_girlSprite runAction:[CCActionSequence actionWithArray:@[girlFlip,girlJump_Up,girlJump_Down]]];
-        CCActionFlipX *wolfFlip = [CCActionFlipX actionWithFlipX:TRUE];
-        CCActionMoveTo *wolfMove = [CCActionMoveTo actionWithDuration:2.0f position:ccp(-150, self.contentSize.height/2)];
-        [_wolfSprite runAction:[CCActionSequence actionWithArray:@[wolfFlip, wolfMove]]];
-        
-        
-        [[OALSimpleAudio sharedInstance] playEffect:@"saberhowl.wav"];
-        
-        
+        [_boySprite runAction:boyFlip];
+        [_physicsWorld addChild:_rockSprite];
+        CCActionRotateBy *rockSpin = [CCActionRotateBy actionWithDuration:1.5f angle:360];
+        [_rockSprite runAction:[CCActionRepeatForever actionWithAction:rockSpin]];
+        CCActionMoveTo *rockMove = [CCActionMoveTo actionWithDuration:1.5f position:_wolfSprite.position];
+        CCActionRemove *rockRemove = [CCActionRemove action];
+        [_rockSprite runAction:[CCActionSequence actionWithArray:@[rockMove,rockRemove]]];
+    
         
     }else if (CGRectContainsPoint(_wolfSpriteRect, location)){
         
         [[OALSimpleAudio sharedInstance] playEffect:@"saberhowl.wav"];
-        [_physicsWorld addChild:_rockSprite];
-        CCActionRotateBy *rockSpin = [CCActionRotateBy actionWithDuration:1.5f angle:360];
-        [_rockSprite runAction:[CCActionRepeatForever actionWithAction:rockSpin]];
-        CCActionMoveTo *rockMove = [CCActionMoveTo actionWithDuration:1.5f position:_girlSprite.position];
-        CCActionRemove *rockRemove = [CCActionRemove action];
-        [_rockSprite runAction:[CCActionSequence actionWithArray:@[rockMove,rockRemove]]];
-        
-        [[OALSimpleAudio sharedInstance] playEffect:@"jump_10.wav"];
-        CCActionFlipX *boyFlip = [CCActionFlipX actionWithFlipX:TRUE];
-        CCActionMoveTo *boyMove = [CCActionMoveTo actionWithDuration:2.0f position:ccp(self.contentSize.width/8, self.contentSize.height/3)];
-        [_boySprite runAction:[CCActionSequence actionWithArray:@[boyFlip,boyMove]]];
-        CCActionFlipX *wolfFlip = [CCActionFlipX actionWithFlipX:TRUE];
-        CCActionMoveTo *wolfMove = [CCActionMoveTo actionWithDuration:2.0f position:ccp(-150, self.contentSize.height/2)];
-        [_wolfSprite runAction:[CCActionSequence actionWithArray:@[wolfFlip, wolfMove]]];
+        CCActionJumpBy *wolfJump_Up = [CCActionJumpBy actionWithDuration:1.0f position:ccp(0, 200) height:50 jumps:1];
+        CCActionJumpBy *wolfJump_Down = [CCActionJumpBy actionWithDuration:0.2f position:ccp(0, -200) height:50 jumps:1];
+        [_wolfSprite runAction:[CCActionSequence actionWithArray:@[wolfJump_Up, wolfJump_Down]]];
         
     }
     
@@ -277,9 +243,27 @@
 
 #pragma mark - Collision Detection
 
-- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair playerCollision:(CCNode *)player rockCollision:(CCNode *)rock
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair monsterCollision:(CCNode *)monster rockCollision:(CCNode *)rock
 {
-    [player removeFromParent];
+    if (hitCount < 3) {
+        [_physicsWorld addChild:_wolfHitSprite];
+        [[OALSimpleAudio sharedInstance] playEffect:@"saberhowl.wav"];
+        //[self addChild:_wolfHitSprite];
+        CCAnimation *wolfHitAnim = [CCAnimation animationWithSpriteFrames:wolfHitFrames delay:0.05f];
+        CCActionAnimate *HitAction = [CCActionAnimate actionWithAnimation:wolfHitAnim];
+        [_wolfHitSprite runAction:HitAction];
+        [monster removeFromParent];
+        
+        hitCount++;
+    }else{
+        [_physicsWorld addChild:_wolfDieSprite];
+        //[self addChild:_wolfDieSprite];
+        CCAnimation *wolfDieAnim = [CCAnimation animationWithSpriteFrames: wolfDieFrames delay:0.05f];
+        CCActionAnimate *DieAction = [CCActionAnimate actionWithAnimation:wolfDieAnim];
+        [_wolfDieSprite runAction:DieAction];
+        [monster removeFromParent];
+    }
+    
     [rock removeFromParent];
     return YES;
 }
@@ -301,14 +285,11 @@
 
 - (void)onStartClicked:(id)sender
 {
-    [_physicsWorld addChild:_girlSprite];
+    
     [_physicsWorld addChild:_boySprite];
     [_physicsWorld addChild:_wolfSprite];
     
-    //CCAnimation *wolfWalkAnim = [CCAnimation animationWithSpriteFrames: wolfWalkFrames delay:0.2f];
-    //CCActionAnimate *WalkAction = [CCActionAnimate actionWithAnimation:wolfWalkAnim];
-    //CCActionRepeatForever *repeatWalk = [CCActionRepeatForever actionWithAction:WalkAction];
-    //[self runAction:repeatWalk];
+    
     
     [startButton removeFromParent];
 }

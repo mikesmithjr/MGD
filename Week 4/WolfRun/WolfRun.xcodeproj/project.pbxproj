@@ -203,12 +203,10 @@
 		92B84C0C18A47E2E008559AA /* desert_BG.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B84C0B18A47E2E008559AA /* desert_BG.png */; };
 		92B84C1218A47EA3008559AA /* saberhowl.wav in Resources */ = {isa = PBXBuildFile; fileRef = 92B84C1118A47EA3008559AA /* saberhowl.wav */; };
 		92B84C1518A480CC008559AA /* Boy.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B84C1318A480CC008559AA /* Boy.png */; };
-		92B84C1618A480CC008559AA /* Girl.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B84C1418A480CC008559AA /* Girl.png */; };
 		92B84C1818A4863A008559AA /* Wolf.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B84C1718A4863A008559AA /* Wolf.png */; };
 		92B84C1A18A486FB008559AA /* background_music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 92B84C1918A486FB008559AA /* background_music.mp3 */; };
 		92B84F0118A4A8FA008559AA /* jump_10.wav in Resources */ = {isa = PBXBuildFile; fileRef = 92B84EFF18A4A8FA008559AA /* jump_10.wav */; };
 		92B84F0218A4A8FA008559AA /* jump_11.wav in Resources */ = {isa = PBXBuildFile; fileRef = 92B84F0018A4A8FA008559AA /* jump_11.wav */; };
-		92B8A98018B5D23900179A0A /* float_sign.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B8A97F18B5D23900179A0A /* float_sign.png */; };
 		92BCF03518B6F5CA008B5093 /* WolfDie-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92BCF02318B6F5CA008B5093 /* WolfDie-hd.plist */; };
 		92BCF03618B6F5CA008B5093 /* WolfDie-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 92BCF02418B6F5CA008B5093 /* WolfDie-hd.png */; };
 		92BCF03718B6F5CA008B5093 /* WolfDie-ipadhd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92BCF02518B6F5CA008B5093 /* WolfDie-ipadhd.plist */; };
@@ -673,12 +671,10 @@
 		92B84C0B18A47E2E008559AA /* desert_BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = desert_BG.png; sourceTree = "<group>"; };
 		92B84C1118A47EA3008559AA /* saberhowl.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = saberhowl.wav; sourceTree = "<group>"; };
 		92B84C1318A480CC008559AA /* Boy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Boy.png; sourceTree = "<group>"; };
-		92B84C1418A480CC008559AA /* Girl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Girl.png; sourceTree = "<group>"; };
 		92B84C1718A4863A008559AA /* Wolf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Wolf.png; sourceTree = "<group>"; };
 		92B84C1918A486FB008559AA /* background_music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = background_music.mp3; sourceTree = "<group>"; };
 		92B84EFF18A4A8FA008559AA /* jump_10.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jump_10.wav; sourceTree = "<group>"; };
 		92B84F0018A4A8FA008559AA /* jump_11.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jump_11.wav; sourceTree = "<group>"; };
-		92B8A97F18B5D23900179A0A /* float_sign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = float_sign.png; sourceTree = "<group>"; };
 		92BCF02318B6F5CA008B5093 /* WolfDie-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "WolfDie-hd.plist"; path = "Resources/WolfDie-hd.plist"; sourceTree = "<group>"; };
 		92BCF02418B6F5CA008B5093 /* WolfDie-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "WolfDie-hd.png"; path = "Resources/WolfDie-hd.png"; sourceTree = "<group>"; };
 		92BCF02518B6F5CA008B5093 /* WolfDie-ipadhd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "WolfDie-ipadhd.plist"; path = "Resources/WolfDie-ipadhd.plist"; sourceTree = "<group>"; };
@@ -752,11 +748,9 @@
 				92BCF03218B6F5CA008B5093 /* WolfWalk-ipadhd.png */,
 				92BCF03318B6F5CA008B5093 /* WolfWalk.plist */,
 				92BCF03418B6F5CA008B5093 /* WolfWalk.png */,
-				92B8A97F18B5D23900179A0A /* float_sign.png */,
 				9220555E18AC9E9B00AD2628 /* Rocks_1.png */,
 				92B84C0918A47E28008559AA /* button.png */,
 				92B84C1718A4863A008559AA /* Wolf.png */,
-				92B84C1418A480CC008559AA /* Girl.png */,
 				92B84C1318A480CC008559AA /* Boy.png */,
 			);
 			name = Sprites;
@@ -1738,7 +1732,6 @@
 				92BCF03D18B6F5CA008B5093 /* WolfHit-ipadhd.plist in Resources */,
 				92C3719518C03EB600667B2A /* Images.xcassets in Resources */,
 				92B84AA918A47C91008559AA /* LICENSE_cocos2d.txt in Resources */,
-				92B84C1618A480CC008559AA /* Girl.png in Resources */,
 				92B84C0A18A47E28008559AA /* button.png in Resources */,
 				92B84C1818A4863A008559AA /* Wolf.png in Resources */,
 				92B8497218A47C90008559AA /* iTunesArtwork in Resources */,
@@ -1764,7 +1757,6 @@
 				92B84F0218A4A8FA008559AA /* jump_11.wav in Resources */,
 				92B8497418A47C90008559AA /* iTunesArtwork@2x in Resources */,
 				92BCF04218B6F5CA008B5093 /* WolfWalk-hd.png in Resources */,
-				92B8A98018B5D23900179A0A /* float_sign.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>6FD5C201-E68D-4CC3-A1D7-FB29A64D150B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>WolfRun</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F197CDB9-79BF-413B-8DFE-474A272C2340</key>
+		<string>ssh://github.com/mikesmithjr/MGD.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Week 4/WolfRun/WolfRun.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F197CDB9-79BF-413B-8DFE-474A272C2340</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/mikesmithjr/MGD.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F197CDB9-79BF-413B-8DFE-474A272C2340</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F197CDB9-79BF-413B-8DFE-474A272C2340</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MGD</string>
+		</dict>
+	</array>
+</dict>
+</plist>
